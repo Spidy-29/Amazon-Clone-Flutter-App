@@ -46,6 +46,14 @@ class _AuthScreenState extends State<AuthScreen> {
         name: _nameController.text);
   }
 
+  void signInUser() {
+    authService.signInUser(
+      context: context,
+      email: _emailController.text,
+      password: _passwordController.text,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     //named navigator to switch the screens
@@ -115,7 +123,6 @@ class _AuthScreenState extends State<AuthScreen> {
                         CustomButton(
                             text: 'Sign Up',
                             onTap: () {
-                              print('Clicked Sign Up');
                               if (_signUpFormKey.currentState!.validate()) {
                                 signUpUser();
                               }
@@ -166,7 +173,13 @@ class _AuthScreenState extends State<AuthScreen> {
                         const SizedBox(
                           height: 10,
                         ),
-                        CustomButton(text: 'Sign In', onTap: () {})
+                        CustomButton(
+                            text: 'Sign In',
+                            onTap: () {
+                              if (_signInFormKey.currentState!.validate()) {
+                                signInUser();
+                              }
+                            })
                       ],
                     ),
                   ),
