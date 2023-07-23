@@ -4,7 +4,6 @@ import 'package:amazon_clone_flutter_app/common/widgets/bottom_bar.dart';
 import 'package:amazon_clone_flutter_app/constants/error_handling.dart';
 import 'package:amazon_clone_flutter_app/constants/global_variables.dart';
 import 'package:amazon_clone_flutter_app/constants/utils.dart';
-import 'package:amazon_clone_flutter_app/home/screens/home_screen.dart';
 import 'package:amazon_clone_flutter_app/models/user.dart';
 import 'package:amazon_clone_flutter_app/providers/user_provider.dart';
 import 'package:flutter/material.dart';
