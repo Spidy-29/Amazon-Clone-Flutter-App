@@ -8,7 +8,7 @@ class Product {
   final String category;
   final double price;
   final String? id;
-  final String? userId;
+  // final String? userId;
   // rating
 
   Product({
@@ -19,7 +19,7 @@ class Product {
     required this.category,
     required this.price,
     this.id,
-    this.userId,
+    // this.userId,
   });
 
   Map<String, dynamic> toMap() {
@@ -31,7 +31,7 @@ class Product {
       'category': category,
       'price': price,
       '_id': id,
-      'userId': userId,
+      // 'userId': userId,
     };
   }
 
@@ -44,7 +44,7 @@ class Product {
       category: map['category'] ?? '',
       price: map['price']?.toDouble() ?? 0.0,
       id: map['_id'],
-      userId: map['userId'],
+      // userId: map['userId'],
     );
   }
 
