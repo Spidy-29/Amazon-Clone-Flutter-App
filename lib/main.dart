@@ -1,5 +1,6 @@
 import 'package:amazon_clone_flutter_app/common/widgets/bottom_bar.dart';
 import 'package:amazon_clone_flutter_app/constants/global_variables.dart';
+import 'package:amazon_clone_flutter_app/features/admin/screens/admin_screen.dart';
 import 'package:amazon_clone_flutter_app/features/auth/screens/auth_screen.dart';
 import 'package:amazon_clone_flutter_app/features/auth/services/auth_service.dart';
 import 'package:amazon_clone_flutter_app/providers/user_provider.dart';
@@ -54,8 +55,11 @@ class _MyAppState extends State<MyApp> {
       ),
       //runs everyTimes when we use Navigator.pushNamed
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: Provider.of<UserProvider>(context).user.token.isNotEmpty ? const BottomBar() : const AuthScreen(),
-      
+      home: Provider.of<UserProvider>(context).user.token.isNotEmpty
+          ? (Provider.of<UserProvider>(context).user.type == 'user')
+              ? const BottomBar()
+              : const AdminScreen()
+          : const AuthScreen(),
     );
   }
 }
