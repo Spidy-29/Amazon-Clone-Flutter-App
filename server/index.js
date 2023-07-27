@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 // IMPORTS FROM OTHER FILES
 const authRouter = require("./routes/auth");
 const adminRouter = require("./routes/admin");
+const productRouter = require("./routes/product");
 // import './feature/auth/screens/auth_screen.dart'
 
 // INIT

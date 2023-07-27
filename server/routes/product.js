@@ -1,6 +1,7 @@
 const express = require("express");
 const productRouter = express.Router();
 const auth = require("../middlewares/auth");
+const Product = require("../models/product");
 
 //  /api/products?category=Essentials
 productRouter.get("/api/products", auth, async (req, res) => {
@@ -15,7 +16,7 @@ productRouter.get("/api/products", auth, async (req, res) => {
 
 // create a get request to search products and get them
 
-productRouter.get("/api/products/search/:name", auth, async (req, res) => {
+productRouter.get("/api/product/search/:name", auth, async (req, res) => {
   try {
     const products = await Product.find({
       name: { $regex: req.params.name, $options: "i" },
