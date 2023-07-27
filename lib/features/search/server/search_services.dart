@@ -17,11 +17,12 @@ class SearchServices {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     List<Product> productList = [];
     try {
-      http.Response res = await http
-          .get(Uri.parse('$uri/api/products?search=$searchQuery'), headers: {
+      http.Response res = await 
+      http.get(Uri.parse('$uri/api/product/search/$searchQuery'), 
+      headers: {
         'Content-Type': 'application/json;charset=UTF-8',
         'x-auth-token': userProvider.user.token,
-      });
+      },);
 
       httpErrorHandle(
         response: res,
