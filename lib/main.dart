@@ -41,7 +41,8 @@ class _MyAppState extends State<MyApp> {
         scaffoldBackgroundColor: GlobalVariables.backgroundColor,
         // its change the color global. We don't need to change color in widget every time.
         colorScheme: const ColorScheme.light(
-          primary: GlobalVariables.secondaryColor,
+          // primary: GlobalVariables.secondaryColor,
+          primary:Colors.red,
         ),
         appBarTheme: const AppBarTheme(
           // no elevation in appbar

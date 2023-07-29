@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import '../features/home/screens/rating.dart';
+
 class Product {
   final String name;
   final String description;
@@ -8,8 +10,8 @@ class Product {
   final String category;
   final double price;
   final String? id;
-  // final String? userId;
   // rating
+  final List<Rating>? rating;
 
   Product({
     required this.name,
@@ -19,6 +21,7 @@ class Product {
     required this.category,
     required this.price,
     this.id,
+    this.rating,
     // this.userId,
   });
 
@@ -31,6 +34,7 @@ class Product {
       'category': category,
       'price': price,
       '_id': id,
+      'rating': rating,
       // 'userId': userId,
     };
   }
@@ -45,6 +49,13 @@ class Product {
       price: map['price']?.toDouble() ?? 0.0,
       id: map['_id'],
       // userId: map['userId'],
+      rating: map['ratings'] != null
+          ? List<Rating>.from(
+              map['ratings']?.map(
+                (x) => Rating.fromMap(x),
+              ),
+            )
+          : null,
     );
   }
 
