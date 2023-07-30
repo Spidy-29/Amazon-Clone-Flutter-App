@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
             color: Colors.black,
           ),
         ),
-        useMaterial3: true,
+        useMaterial3: true, // can remove the line
       ),
       //runs everyTimes when we use Navigator.pushNamed
       onGenerateRoute: (settings) => generateRoute(settings),

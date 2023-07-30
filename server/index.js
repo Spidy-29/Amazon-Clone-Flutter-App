@@ -1,6 +1,7 @@
 // IMPORTS FORM PACKAGES
 const express = require("express");
 const mongoose = require("mongoose");
+require('dotenv').config();
 // import 'package:express/express.dart'
 
 // IMPORTS FROM OTHER FILES
@@ -13,8 +14,7 @@ const userRouter = require("./routes/user");
 // INIT
 const PORT = process.env.PORT || 3000;
 const app = express();
-const DB =
-  "mongodb+srv://spidytechbuddy:spidy123@cluster0.ldjg1iv.mongodb.net/?retryWrites=true&w=majority";
+const DB = process.env.DB_URL;
 
 // middleware
 // CLIENT -> middleware -> SERVER -> CLIENT
