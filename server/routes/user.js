@@ -93,7 +93,7 @@ userRouter.post("/api/order", auth, async (req, res) => {
       
     let user = await User.findById(req.user);
     user.cart = [];
-    user = await user.save;
+    user = await user.save();
 
     let order = new Order({
       products,
@@ -105,6 +105,17 @@ userRouter.post("/api/order", auth, async (req, res) => {
 
     order = await order.save();
     res.json(order);
+  } catch (e) {
+    res.status(500).json({
+      error: e.message,
+    });
+  }
+});
+
+userRouter.get("/api/orders/me", auth, async (req, res) => {
+  try {
+    const orders = await Order.find({userId : req.user});
+    res.json(orders);
   } catch (e) {
     res.status(500).json({
       error: e.message,

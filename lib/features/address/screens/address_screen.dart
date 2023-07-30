@@ -2,7 +2,6 @@ import 'package:amazon_clone_flutter_app/common/widgets/custom_button.dart';
 import 'package:amazon_clone_flutter_app/constants/utils.dart';
 import 'package:amazon_clone_flutter_app/features/address/services/address_services.dart';
 import 'package:flutter/material.dart';
-import 'package:pay/pay.dart';
 import 'package:provider/provider.dart';
 
 import '../../../common/widgets/custom_textfield.dart';
@@ -126,18 +125,18 @@ class _AddressScreenState extends State<AddressScreen> {
     }
   }
 
-  List<PaymentItem> paymentItems = [];
+  // List<PaymentItem> paymentItems = [];
 
   @override
   void initState() {
     super.initState();
-    paymentItems.add(
-      PaymentItem(
-        amount: widget.totalAmount,
-        label: 'Total Amount',
-        status: PaymentItemStatus.final_price,
-      ),
-    );
+    // paymentItems.add(
+    //   PaymentItem(
+    //     amount: widget.totalAmount,
+    //     label: 'Total Amount',
+    //     status: PaymentItemStatus.final_price,
+    //   ),
+    // );
   }
 
   @override
