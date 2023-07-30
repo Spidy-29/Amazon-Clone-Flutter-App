@@ -7,8 +7,8 @@ import 'package:amazon_clone_flutter_app/features/auth/screens/auth_screen.dart'
 import 'package:amazon_clone_flutter_app/models/order.dart';
 import 'package:amazon_clone_flutter_app/providers/user_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AccountServices {

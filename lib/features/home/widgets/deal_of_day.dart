@@ -95,7 +95,7 @@ class _DealOfDayState extends State<DealOfDay> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(vertical: 15).copyWith(
+                      padding: const EdgeInsets.symmetric(vertical: 15).copyWith(
                         left: 15,
                       ),
                       alignment: Alignment.topLeft,

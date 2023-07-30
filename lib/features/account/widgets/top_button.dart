@@ -1,4 +1,3 @@
-import 'package:amazon_clone_flutter_app/features/account/screens/account_screen.dart';
 import 'package:amazon_clone_flutter_app/features/account/services/account_services.dart';
 import 'package:amazon_clone_flutter_app/features/account/widgets/account_button.dart';
 import 'package:flutter/material.dart';
@@ -16,10 +15,14 @@ class TopButtons extends StatelessWidget {
             AccountButton(text: "Turn Seller", onTap: () {}),
           ],
         ),
-        const SizedBox(height: 10,),
+        const SizedBox(
+          height: 10,
+        ),
         Row(
           children: [
-            AccountButton(text: "Log Out", onTap: () =>AccountServices().logOut(context)),
+            AccountButton(
+                text: "Log Out",
+                onTap: () => AccountServices().logOut(context)),
             AccountButton(text: "Your wishlist", onTap: () {}),
           ],
         ),
