@@ -1,12 +1,11 @@
 const express = require("express");
 const productRouter = express.Router();
 const auth = require("../middlewares/auth");
-const Product = require("../models/product");
+const { Product } = require("../models/product");
 
 //  /api/products?category=Essentials
 productRouter.get("/api/products", auth, async (req, res) => {
   try {
-    console.log(req.query.category);
     const products = await Product.find({ category: req.query.category });
     res.json(products);
   } catch (e) {
@@ -57,17 +56,18 @@ productRouter.get("/api/deal-of-day", auth, async (req, res) => {
   try {
     let products = await Product.find({});
 
-    products = products.sort((a,b) =>{
-      let aSum = 0,bSum = 0;
+    products = products.sort((a, b) => {
+      let aSum = 0,
+        bSum = 0;
 
-      for(let i = 0;i < a.ratings.length;i++){
+      for (let i = 0; i < a.ratings.length; i++) {
         aSum += a.ratings[i].rating;
       }
 
-      for(let i = 0;i < b.ratings.length;i++){
+      for (let i = 0; i < b.ratings.length; i++) {
         bSum += b.ratings[i].rating;
       }
-       
+
       return aSum < bSum ? 1 : -1;
     });
 
