@@ -11,7 +11,7 @@ const userRouter = require("./routes/user");
 // import './feature/auth/screens/auth_screen.dart'
 
 // INIT
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 const DB =
   "mongodb+srv://spidytechbuddy:spidy123@cluster0.ldjg1iv.mongodb.net/?retryWrites=true&w=majority";
