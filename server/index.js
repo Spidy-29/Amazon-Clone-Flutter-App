@@ -1,22 +1,28 @@
 // IMPORTS FORM PACKAGES
 const express = require("express");
 const mongoose = require("mongoose");
+require('dotenv').config();
 // import 'package:express/express.dart'
 
 // IMPORTS FROM OTHER FILES
 const authRouter = require("./routes/auth");
+const adminRouter = require("./routes/admin");
+const productRouter = require("./routes/product");
+const userRouter = require("./routes/user");
 // import './feature/auth/screens/auth_screen.dart'
 
 // INIT
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
-const DB =
-  "mongodb+srv://spidytechbuddy:spidy123@cluster0.ldjg1iv.mongodb.net/?retryWrites=true&w=majority";
+const DB = process.env.DB_URL;
 
 // middleware
 // CLIENT -> middleware -> SERVER -> CLIENT
 app.use(express.json());
 app.use(authRouter);
+app.use(adminRouter);
+app.use(productRouter);
+app.use(userRouter);
 
 // Connections
 mongoose
