@@ -24,7 +24,7 @@ class AddressBox extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Icon(
+          const Icon(
             Icons.location_on_outlined,
             size: 20,
           ),
