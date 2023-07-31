@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-String uri = 'http://10.103.140.3:3000';
+// String uri = 'http://10.103.140.3:3000';
+String uri = 'https://ruby-helpful-crocodile.cyclic.cloud';
 
 class GlobalVariables {
   //COLORS
